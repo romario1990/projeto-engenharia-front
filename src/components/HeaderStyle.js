@@ -15,7 +15,6 @@ function HeaderStyle() {
         <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
       </Menu>
     </Header>
- 
   );
 }
 

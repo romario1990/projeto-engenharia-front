@@ -1,13 +1,18 @@
-import React from 'react';
-import { Layout, Breadcrumb } from 'antd';
+import React, { useCallback} from 'react';
+import { Layout, Breadcrumb, Button } from 'antd';
 import SiderStyle from './SiderStyle';
 import HeaderStyle from './HeaderStyle';
-
+import {AlunosProvider} from '../provider'
 
 const { Content } = Layout;
 
-
 function Home() {
+
+  const requi = useCallback(async ()=>{
+    const responnse = await AlunosProvider.getAlunos()
+    console.log("🚀 ~ file: Home.js ~ line 12 ~ requi ~ responnse", responnse)
+  }, [])
+
   return (
     <Layout>
     <Layout>
@@ -27,7 +32,7 @@ function Home() {
             minHeight: 280,
           }}
         >
-          Content dhsjksdhjklhjkl
+        <Button onClick={requi}>Buscar Alunos</Button>
         </Content>
       </Layout>
     </Layout>

@@ -7,7 +7,7 @@ import HeaderStyle from './HeaderStyle';
 const { Content } = Layout;
 
 
-function Home() {
+function Version() {
   return (
     <Layout>
     <Layout>
@@ -35,4 +35,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Version;
