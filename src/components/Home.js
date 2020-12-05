@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useCallback, useState } from 'react';
 import HeaderStyle from './HeaderStyle';
-import {AlunosProvider} from '../provider'
 import {Row, Col, Typography, Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -57,7 +56,7 @@ function Home() {
                 <span>Não possui conta?</span><a onClick={alterarTelaLogin}> Criar</a>
               </Col>
               <Col span={24}>
-                <span>Esqueceu a senha?</span><Link to="/"> Click aqui</Link>
+                <span>Esqueceu a senha?</span><Link to="/redefinirsenha"> Click aqui</Link>
               </Col>
             </>
           )}
