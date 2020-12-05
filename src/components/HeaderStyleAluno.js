@@ -11,9 +11,12 @@ function HeaderStyle() {
     <Header style={{ background: 'white'}}>
       <Menu
         mode="horizontal"
-        style={{ lineHeight: '64px', marginLeft: '200px', marginRight: '200px'}}
+        style={{ lineHeight: '64px', textAlign: 'center'}}
       >
         <img style={{ width: '55px'}} src={logoQuiz} alt="Logo quiz" />
+        <Menu.Item key="1"><Link to="/">Iniciar quiz</Link></Menu.Item>
+        <Menu.Item key="2"><Link to="/">perguntas respondidas</Link></Menu.Item>
+        <Button style={{ border: '0px'}} icon={<img style={{ width: '30px'}} src={pf} alt="Logo quiz" />}/>
       </Menu>
     </Header>
   );
