@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button, Layout, Menu } from 'antd';
-import logoQuiz from '../images/quiz.svg';
-import pf from '../images/pf.svg';
-import { Link } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import logoQuiz from '../../../images/quiz.svg';
 const { Header } = Layout;
 
 

@@ -21,7 +21,7 @@ function Home() {
     <>
       <HeaderStyle />
       <div>
-        <Row  gutter={[0,12]} style={{ width: '300px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '100px' }}>
+        <Row  gutter={[0,12]} style={{ width: '300px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '50px' }}>
           <Col span={24} style={{ textAlign: 'center'}}>
             {telaLogin ? (
               <Title level={2}>Criar Conta</Title>
@@ -31,14 +31,10 @@ function Home() {
           </Col>
           <Col span={24}>
             <span>Usuário/e-mail</span>
-          </Col>
-          <Col span={24}>
             <Input/>
           </Col>
           <Col span={24}>
             <span>password(6-8)</span>
-          </Col>
-          <Col span={24}>
             <Input.Password />
           </Col>
           <Col span={24} style={{ textAlign: 'center'}}>
@@ -54,8 +50,6 @@ function Home() {
             <>
               <Col span={24}>
                 <span>Não possui conta?</span><a onClick={alterarTelaLogin}> Criar</a>
-              </Col>
-              <Col span={24}>
                 <span>Esqueceu a senha?</span><Link to="/redefinirsenha"> Click aqui</Link>
               </Col>
             </>
