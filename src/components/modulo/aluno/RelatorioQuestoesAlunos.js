@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderStyleProfessor from './HeaderStyleProfessor';
+import HeaderStyleAluno from './HeaderStyleAluno';
 import {Row, Col, Typography, Select, Button, Table } from 'antd';
 
 const Title = Typography.Title;
@@ -65,19 +65,18 @@ function onSearch(val) {
   console.log('search:', val);
 }
 
-function RelatorioAlunos() {
+function RelatorioQuestoesAlunos() {
   return (
     <>
-      <HeaderStyleProfessor />
+      <HeaderStyleAluno />
       <div>
         <Row  gutter={[0,12]} style={{ width: '400px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '50px' }}>
           <Col span={24} style={{ textAlign: 'center'}}>
-            <Title level={2}>Relatório dos alunos</Title>
+            <Title level={2}>Questões respondidas</Title>
           </Col>
-          <Title level={5}>Cadastro individual</Title>
           <Row>
             <Col span={9}>
-              <span>Selecione o aluno:</span>
+              <span>Selecione uma trilha:</span>
             </Col>
             <Col span={15}>
               <Select
@@ -111,4 +110,4 @@ function RelatorioAlunos() {
     )
 }
 
-export default RelatorioAlunos;
+export default RelatorioQuestoesAlunos;

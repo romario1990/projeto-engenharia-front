@@ -1,53 +1,10 @@
 import React from 'react';
-import HeaderStyleProfessor from './HeaderStyleProfessor';
-import {Row, Col, Typography, Select, Button, Table } from 'antd';
+import HeaderStyleAluno from './HeaderStyleAluno';
+import {Row, Col, Typography, Select, Button } from 'antd';
 
 const Title = Typography.Title;
 
 const { Option } = Select;
-
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: text => text,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-];
-
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
 
 function onChange(value) {
   console.log(`selected ${value}`);
@@ -65,19 +22,18 @@ function onSearch(val) {
   console.log('search:', val);
 }
 
-function RelatorioAlunos() {
+function Quiz() {
   return (
     <>
-      <HeaderStyleProfessor />
+      <HeaderStyleAluno />
       <div>
         <Row  gutter={[0,12]} style={{ width: '400px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '50px' }}>
           <Col span={24} style={{ textAlign: 'center'}}>
-            <Title level={2}>Relatório dos alunos</Title>
+            <Title level={2}>Iniciar QUIZ</Title>
           </Col>
-          <Title level={5}>Cadastro individual</Title>
           <Row>
             <Col span={9}>
-              <span>Selecione o aluno:</span>
+              <span>Selecione uma trilha:</span>
             </Col>
             <Col span={15}>
               <Select
@@ -99,11 +55,8 @@ function RelatorioAlunos() {
               </Select>
             </Col>
           </Row>
-          <Col>
-            <Table size="small" columns={columns} dataSource={data} />
-          </Col>
           <Col span={24} style={{ textAlign: 'center'}}>
-            <Button>Exportar para PDF</Button>
+            <Button>Iniciar</Button>
           </Col>
         </Row>
       </div>
@@ -111,4 +64,4 @@ function RelatorioAlunos() {
     )
 }
 
-export default RelatorioAlunos;
+export default Quiz;

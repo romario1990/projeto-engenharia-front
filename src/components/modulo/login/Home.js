@@ -50,7 +50,9 @@ function Home() {
             <>
               <Col span={24}>
                 <span>Não possui conta?</span><a onClick={alterarTelaLogin}> Criar</a>
+              <Col span={24}>
                 <span>Esqueceu a senha?</span><Link to="/redefinirsenha"> Click aqui</Link>
+              </Col>
               </Col>
             </>
           )}

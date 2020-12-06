@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import HeaderStyleProfessor from './HeaderStyleProfessor';
 import {Row, Col, Typography, Input, Button, Checkbox, Select } from 'antd';
