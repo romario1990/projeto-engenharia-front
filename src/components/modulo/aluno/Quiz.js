@@ -1,6 +1,6 @@
-import React from 'react';
-import HeaderStyleAluno from './HeaderStyleAluno';
-import {Row, Col, Typography, Select, Button } from 'antd';
+import React from "react";
+import HeaderStyleAluno from "./HeaderStyleAluno";
+import { Row, Col, Typography, Select, Button } from "antd";
 
 const Title = Typography.Title;
 
@@ -11,15 +11,15 @@ function onChange(value) {
 }
 
 function onBlur() {
-  console.log('blur');
+  console.log("blur");
 }
 
 function onFocus() {
-  console.log('focus');
+  console.log("focus");
 }
 
 function onSearch(val) {
-  console.log('search:', val);
+  console.log("search:", val);
 }
 
 function Quiz() {
@@ -27,8 +27,17 @@ function Quiz() {
     <>
       <HeaderStyleAluno />
       <div>
-        <Row  gutter={[0,12]} style={{ width: '400px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '50px' }}>
-          <Col span={24} style={{ textAlign: 'center'}}>
+        <Row
+          gutter={[0, 12]}
+          style={{
+            width: "400px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "block",
+            marginTop: "50px",
+          }}
+        >
+          <Col span={24} style={{ textAlign: "center" }}>
             <Title level={2}>Iniciar QUIZ</Title>
           </Col>
           <Row>
@@ -39,29 +48,30 @@ function Quiz() {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Selecionar"
+                required="true"
                 optionFilterProp="children"
                 onChange={onChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onSearch={onSearch}
                 filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >=
+                  0
                 }
               >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="tom">Tom</Option>
+                <Option value="custom">Customizada</Option>
+                <Option value="random">Randômica</Option>
               </Select>
             </Col>
           </Row>
-          <Col span={24} style={{ textAlign: 'center'}}>
+          <Col span={24} style={{ textAlign: "center" }}>
             <Button>Iniciar</Button>
           </Col>
         </Row>
       </div>
     </>
-    )
+  );
 }
 
 export default Quiz;
