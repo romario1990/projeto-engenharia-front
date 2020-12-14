@@ -1,6 +1,6 @@
-import React from 'react';
-import HeaderStyleProfessor from './HeaderStyleProfessor';
-import {Row, Col, Typography, Select, Button, Table } from 'antd';
+import React from "react";
+import HeaderStyleProfessor from "./HeaderStyleProfessor";
+import { Row, Col, Typography, Select, Button, Table } from "antd";
 
 const Title = Typography.Title;
 
@@ -8,44 +8,33 @@ const { Option } = Select;
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: text => text,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: "Relatório do aluno Jack",
+    dataIndex: "report",
+    key: "report",
+    render: (text) => text,
   },
 ];
 
 const data = [
   {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    key: "1",
+    report:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
   },
   {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    key: "2",
+    report:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
   },
   {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    key: "3",
+    report:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+  },
+  {
+    key: "4",
+    report:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
   },
 ];
 
@@ -54,15 +43,15 @@ function onChange(value) {
 }
 
 function onBlur() {
-  console.log('blur');
+  console.log("blur");
 }
 
 function onFocus() {
-  console.log('focus');
+  console.log("focus");
 }
 
 function onSearch(val) {
-  console.log('search:', val);
+  console.log("search:", val);
 }
 
 function RelatorioAlunos() {
@@ -70,11 +59,20 @@ function RelatorioAlunos() {
     <>
       <HeaderStyleProfessor />
       <div>
-        <Row  gutter={[0,12]} style={{ width: '400px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '50px' }}>
-          <Col span={24} style={{ textAlign: 'center'}}>
+        <Row
+          gutter={[0, 12]}
+          style={{
+            width: "400px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "block",
+            marginTop: "50px",
+          }}
+        >
+          <Col span={24} style={{ textAlign: "center" }}>
             <Title level={2}>Relatório dos alunos</Title>
           </Col>
-          <Title level={5}>Cadastro individual</Title>
+          {/* <Title level={5}>Cadastro individual</Title> */}
           <Row>
             <Col span={9}>
               <span>Selecione o aluno:</span>
@@ -83,14 +81,15 @@ function RelatorioAlunos() {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Selecionar"
                 optionFilterProp="children"
                 onChange={onChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onSearch={onSearch}
                 filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >=
+                  0
                 }
               >
                 <Option value="jack">Jack</Option>
@@ -102,13 +101,13 @@ function RelatorioAlunos() {
           <Col>
             <Table size="small" columns={columns} dataSource={data} />
           </Col>
-          <Col span={24} style={{ textAlign: 'center'}}>
+          <Col span={24} style={{ textAlign: "center" }}>
             <Button>Exportar para PDF</Button>
           </Col>
         </Row>
       </div>
     </>
-    )
+  );
 }
 
 export default RelatorioAlunos;

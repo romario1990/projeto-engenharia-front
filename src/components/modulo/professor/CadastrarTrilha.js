@@ -1,7 +1,16 @@
-import React from 'react';
-import HeaderStyleProfessor from './HeaderStyleProfessor';
-import {Row, Col, Typography, Select, Radio, Input, Button, Table } from 'antd';
-import { PlusCircleOutlined } from '@ant-design/icons';
+import React from "react";
+import HeaderStyleProfessor from "./HeaderStyleProfessor";
+import {
+  Row,
+  Col,
+  Typography,
+  Select,
+  Radio,
+  Input,
+  Button,
+  Table,
+} from "antd";
+import { PlusCircleOutlined } from "@ant-design/icons";
 
 const Title = Typography.Title;
 
@@ -12,57 +21,57 @@ function onChange(value) {
 }
 
 function onBlur() {
-  console.log('blur');
+  console.log("blur");
 }
 
 function onFocus() {
-  console.log('focus');
+  console.log("focus");
 }
 
 function onSearch(val) {
-  console.log('search:', val);
+  console.log("search:", val);
 }
 
 const columns = [
   {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: text => text,
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+    render: (text) => text,
   },
   {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
+    title: "Age",
+    dataIndex: "age",
+    key: "age",
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
+    title: "Address",
+    dataIndex: "address",
+    key: "address",
   },
 ];
 
 const data = [
   {
-    key: '1',
-    name: 'John Brown',
+    key: "1",
+    name: "John Brown",
     age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    address: "New York No. 1 Lake Park",
+    tags: ["nice", "developer"],
   },
   {
-    key: '2',
-    name: 'Jim Green',
+    key: "2",
+    name: "Jim Green",
     age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    address: "London No. 1 Lake Park",
+    tags: ["loser"],
   },
   {
-    key: '3',
-    name: 'Joe Black',
+    key: "3",
+    name: "Joe Black",
     age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    address: "Sidney No. 1 Lake Park",
+    tags: ["cool", "teacher"],
   },
 ];
 
@@ -71,28 +80,37 @@ function CadastrarTrilha() {
     <>
       <HeaderStyleProfessor />
       <div>
-        <Row  gutter={[0,12]} style={{ width: '550px', marginLeft: 'auto', marginRight: 'auto', display: 'block', marginTop: '50px' }}>
-          <Col span={24} style={{ textAlign: 'center'}}>
+        <Row
+          gutter={[0, 12]}
+          style={{
+            width: "550px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "block",
+            marginTop: "50px",
+          }}
+        >
+          <Col span={24} style={{ textAlign: "center" }}>
             <Title level={2}>Cadatrar trilha customizada</Title>
           </Col>
-          {/* <Row gutter={[0,8]}>
+          <Row gutter={[0, 8]}>
             <Col span={10}>
               <span>Questões:</span>
             </Col>
             <Col>
-              <Radio.Group size="small" onChange={()=> console.log("aqui")}>
+              <Radio.Group size="small" onChange={() => console.log("aqui")}>
                 <Radio.Button value="questao1">Questão 1</Radio.Button>
                 <Radio.Button value="questao2">Questão 2</Radio.Button>
                 <Radio.Button value="questao3">Questão 3</Radio.Button>
               </Radio.Group>
             </Col>
-          </Row> */}
-          <Row gutter={[0,8]}>
+          </Row>
+          <Row gutter={[0, 8]}>
             <Col span={10}>
               <span>Fases:</span>
             </Col>
             <Col>
-              <Radio.Group size="small" onChange={()=> console.log("aqui")}>
+              <Radio.Group size="small" onChange={() => console.log("aqui")}>
                 <Radio.Button value="fase1">Fase 1</Radio.Button>
                 <Radio.Button value="fase2">Fase 2</Radio.Button>
                 <Radio.Button value="fase3">Fase 3</Radio.Button>
@@ -101,15 +119,15 @@ function CadastrarTrilha() {
               </Radio.Group>
             </Col>
           </Row>
-          <Row gutter={[0,8]}>
+          <Row gutter={[0, 8]}>
             <Col span={10}>
               <span>Nome da trilha:</span>
             </Col>
             <Col>
-              <Input style={{ width: '266px' }} size="small"/>
+              <Input style={{ width: "266px" }} size="small" />
             </Col>
           </Row>
-          <Row gutter={[0,8]}>
+          <Row gutter={[0, 8]}>
             <Col span={10}>
               <span>Nível da questão:</span>
             </Col>
@@ -117,7 +135,7 @@ function CadastrarTrilha() {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Selecionar"
                 optionFilterProp="children"
                 size="small"
                 onChange={onChange}
@@ -125,16 +143,17 @@ function CadastrarTrilha() {
                 onBlur={onBlur}
                 onSearch={onSearch}
                 filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >=
+                  0
                 }
               >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="tom">Tom</Option>
+                <Option value="jack">Iniciante</Option>
+                <Option value="lucy">Intermediário</Option>
+                <Option value="tom">Avançado</Option>
               </Select>
             </Col>
           </Row>
-          <Row gutter={[0,8]}>
+          <Row gutter={[0, 8]}>
             <Col span={10}>
               <span>Pesquisar pergunta:</span>
             </Col>
@@ -142,7 +161,7 @@ function CadastrarTrilha() {
               <Select
                 showSearch
                 style={{ width: 200 }}
-                placeholder="Select a person"
+                placeholder="Selecionar"
                 optionFilterProp="children"
                 size="small"
                 onChange={onChange}
@@ -150,32 +169,84 @@ function CadastrarTrilha() {
                 onBlur={onBlur}
                 onSearch={onSearch}
                 filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >=
+                  0
                 }
               >
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="tom">Tom</Option>
+                <Option value="jack">Pergunta 1</Option>
+                <Option value="lucy">Pergunta 2</Option>
+                <Option value="tom">Pergunta 3</Option>
               </Select>
             </Col>
             <Col>
-              <PlusCircleOutlined onClick={()=> console.log("adicionar pergunta")} style={{ color: "#52c41a" }}/>
+              <PlusCircleOutlined
+                onClick={() => console.log("adicionar pergunta")}
+                style={{ color: "#52c41a" }}
+              />
             </Col>
           </Row>
-          <Row gutter={[0,8]}>
+          {/* <Row gutter={[0, 8]}>
             <Col span={24}>
-              <Table pagination={false} size="small" columns={columns} dataSource={data} />
+              <Table
+                pagination={false}
+                size="small"
+                columns={columns}
+                dataSource={data}
+              />
+            </Col>
+          </Row> */}
+          <Row gutter={[0, 8]}>
+            <Col span={10}>
+              <span>Enunciado:</span>
+            </Col>
+            <Col>
+              <Input.TextArea
+                style={{ width: "205px", height: "100px" }}
+                size="small"
+              />
+            </Col>
+            <Col span={10}>
+              <span>Opção 1:</span>
+            </Col>
+            <Col>
+              <Input style={{ width: "205px" }} size="small" />
+              <Input type="checkbox" style={{ width: "30px" }} size="small" />
+              Correta?
+            </Col>
+            <Col span={10}>
+              <span>Opção 2:</span>
+            </Col>
+            <Col>
+              <Input style={{ width: "205px" }} size="small" />
+              <Input type="checkbox" style={{ width: "30px" }} size="small" />
+              Correta?
+            </Col>
+            <Col span={10}>
+              <span>Opção 3:</span>
+            </Col>
+            <Col>
+              <Input style={{ width: "205px" }} size="small" />
+              <Input type="checkbox" style={{ width: "30px" }} size="small" />
+              Correta?
+            </Col>
+            <Col span={10}>
+              <span>Opção 4:</span>
+            </Col>
+            <Col>
+              <Input style={{ width: "205px" }} size="small" />
+              <Input type="checkbox" style={{ width: "30px" }} size="small" />
+              Correta?
             </Col>
           </Row>
           <Row>
-            <Col span={24} style={{ marginTop: '10px', textAlign: 'center'}}>
+            <Col span={24} style={{ marginTop: "10px", textAlign: "center" }}>
               <Button size="small">Cadastrar trilha customizada</Button>
             </Col>
           </Row>
         </Row>
       </div>
     </>
-    )
+  );
 }
 
 export default CadastrarTrilha;
